@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-03T06:56:43.639Z",
+    "end": "2022-02-03T06:56:50.566Z",
+    "duration": 6927,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a1f72bdd-9909-4dde-a6a1-94550ae0c1d3",
+      "title": "",
+      "fullFile": "cypress/integration/specs/Google-search.spec.js",
+      "file": "cypress/integration/specs/Google-search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ad21df38-3d0a-4f0a-82fc-fdf3053d9c07",
+          "title": "example to-do app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to google search and search for a car",
+              "fullTitle": "example to-do app Navigates to google search and search for a car",
+              "timedOut": null,
+              "duration": 2001,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com');\ncy.xpath('//*[@name=\"q\"]', {\n  timeout: 7000\n}).type(\"cars\");",
+              "err": {},
+              "uuid": "9a890cba-0c8f-40a8-b6e8-cd7fc8b4ae66",
+              "parentUUID": "ad21df38-3d0a-4f0a-82fc-fdf3053d9c07",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Submits the search field and prints out the search number",
+              "fullTitle": "example to-do app Submits the search field and prints out the search number",
+              "timedOut": null,
+              "duration": 2302,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  \"Search result is About 8,870,000,000 results (0.74 seconds) \",\n  \"Search number is 8,870,000,000\"\n]",
+              "code": "cy.xpath('//*[@name=\"q\"]', {\n  timeout: 7000\n}).type(\"{enter}\");\ncy.xpath('//div[@id=\"result-stats\"]').then($searchResult => {\n  const text = $searchResult.text();\n  cy.addContext(\"Search result is \" + text);\n  cy.log(\"Log-Search result is \" + text);\n  const arrayResult = text.split(' ');\n  cy.addContext(\"Search number is \" + arrayResult[1]);\n}); //end of should",
+              "err": {},
+              "uuid": "326155a4-5cc9-455a-9af5-56c7d02e9bf2",
+              "parentUUID": "ad21df38-3d0a-4f0a-82fc-fdf3053d9c07",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9a890cba-0c8f-40a8-b6e8-cd7fc8b4ae66",
+            "326155a4-5cc9-455a-9af5-56c7d02e9bf2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4303,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

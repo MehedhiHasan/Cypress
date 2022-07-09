@@ -1,0 +1,96 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-25T17:07:55.043Z",
+    "end": "2022-06-25T17:07:55.605Z",
+    "duration": 562,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1bc8d983-7f01-4155-b3b5-778178cd1f77",
+      "title": "",
+      "fullFile": "cypress/integration/specs/practice.js",
+      "file": "cypress/integration/specs/practice.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 325,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "throw err;",
+          "err": {
+            "message": "ReferenceError: The following error originated from your test code, not from Cypress.\n\n  > React is not defined\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.",
+            "estack": "ReferenceError: The following error originated from your test code, not from Cypress.\n\n  > React is not defined\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n    at ./cypress/integration/specs/practice.js (http://localhost:62466/__cypress/tests?p=cypress/integration/specs/practice.js:100:1)\n    at __webpack_require__ (http://localhost:62466/__cypress/tests?p=cypress/integration/specs/practice.js:20:30)\n    at 0 (http://localhost:62466/__cypress/tests?p=cypress/integration/specs/practice.js:124:18)\n    at __webpack_require__ (http://localhost:62466/__cypress/tests?p=cypress/integration/specs/practice.js:20:30)\n    at eval (http://localhost:62466/__cypress/tests?p=cypress/integration/specs/practice.js:84:18)\n    at eval (http://localhost:62466/__cypress/tests?p=cypress/integration/specs/practice.js:87:10)\n    at eval (<anonymous>)",
+            "diff": null
+          },
+          "uuid": "43e12e8d-f722-47fb-b8f1-b19b35872efe",
+          "parentUUID": "1bc8d983-7f01-4155-b3b5-778178cd1f77",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "43e12e8d-f722-47fb-b8f1-b19b35872efe"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 325,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

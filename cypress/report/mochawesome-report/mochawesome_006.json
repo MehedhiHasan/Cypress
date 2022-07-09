@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-03T06:02:44.000Z",
+    "end": "2022-02-03T06:02:50.450Z",
+    "duration": 6450,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e1ae77ee-0181-4442-80c0-4e7c1ca55552",
+      "title": "",
+      "fullFile": "cypress/integration/specs/Google-search.spec.js",
+      "file": "cypress/integration/specs/Google-search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0e80a046-dba5-439c-84e3-181d886fcf69",
+          "title": "example to-do app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to google search and search for a car",
+              "fullTitle": "example to-do app Navigates to google search and search for a car",
+              "timedOut": null,
+              "duration": 2681,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com');\ncy.xpath('//*[@name=\"q\"]', {\n  timeout: 7000\n}).type(\"cars\");",
+              "err": {},
+              "uuid": "e3f017f2-3701-47cb-9035-03349bd030dc",
+              "parentUUID": "0e80a046-dba5-439c-84e3-181d886fcf69",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Submits the search button and prints out the search number",
+              "fullTitle": "example to-do app Submits the search button and prints out the search number",
+              "timedOut": null,
+              "duration": 1244,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"Screenshot\",\n  \"value\": \"/cypress/report/screenshots>/specs/Google-search.spec.js/example to-do app -- Submits the search button and prints out the search number (failed).png\"\n}",
+              "code": "cy.xpath('//*[@name=\"btnK\"]', {\n  timeout: 7000\n}).type(\"{enter}\");\ncy.xpath('//*[@id=\"result-stats\"]').should(searchResult => {\n  const text = searchResult.text();\n  cy.log(\"Search result is \" + $searchResult);\n  const arrayResult = text.split(' ');\n  cy.log(\"Search number is \" + arrayResult[0]);\n}); //end of should",
+              "err": {
+                "message": "CypressError: `cy.type()` can only be called on a single element. Your subject contained 2 elements.\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` can only be called on a single element. Your subject contained 2 elements.\n\nhttps://on.cypress.io/type\n    at Context.type (https://www.google.com/__cypress/runner/cypress_runner.js:154725:76)\n    at Context.<anonymous> (https://www.google.com/__cypress/runner/cypress_runner.js:173116:19)\nFrom Your Spec Code:\n    at Context.eval (https://www.google.com/__cypress/tests?p=cypress\\integration\\specs\\Google-search.spec.js:112:8)",
+                "diff": null
+              },
+              "uuid": "c428ac23-c107-4094-b44d-bcc7c9215e15",
+              "parentUUID": "0e80a046-dba5-439c-84e3-181d886fcf69",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e3f017f2-3701-47cb-9035-03349bd030dc"
+          ],
+          "failures": [
+            "c428ac23-c107-4094-b44d-bcc7c9215e15"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3925,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-03T06:09:07.062Z",
+    "end": "2022-02-03T06:09:18.366Z",
+    "duration": 11304,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cb79a550-5cb5-491a-b64b-3844940584df",
+      "title": "",
+      "fullFile": "cypress/integration/specs/Google-search.spec.js",
+      "file": "cypress/integration/specs/Google-search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "51f5fe94-942f-4dc1-8ba6-80e88b653d3b",
+          "title": "example to-do app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to google search and search for a car",
+              "fullTitle": "example to-do app Navigates to google search and search for a car",
+              "timedOut": null,
+              "duration": 2003,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com');\ncy.xpath('//*[@name=\"q\"]', {\n  timeout: 7000\n}).type(\"cars\");",
+              "err": {},
+              "uuid": "08a5fdf9-043f-4bcb-a969-e9a833802d04",
+              "parentUUID": "51f5fe94-942f-4dc1-8ba6-80e88b653d3b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Submits the search field and prints out the search number",
+              "fullTitle": "example to-do app Submits the search field and prints out the search number",
+              "timedOut": null,
+              "duration": 6545,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"Screenshot\",\n  \"value\": \"/cypress/report/screenshots>/specs/Google-search.spec.js/example to-do app -- Submits the search field and prints out the search number (failed).png\"\n}",
+              "code": "cy.xpath('//*[@name=\"q\"]', {\n  timeout: 7000\n}).type(\"{enter}\");\ncy.xpath('//*[@id=\"result-stats\"]').should(searchResult => {\n  const text = searchResult.text();\n  cy.log(\"Search result is \" + searchResult);\n  const arrayResult = text.split(' ');\n  cy.log(\"Search number is \" + arrayResult[0]);\n}); //end of should",
+              "err": {
+                "message": "TypeError: Cannot read properties of null (reading 'text')",
+                "estack": "TypeError: Cannot read properties of null (reading 'text')\n    at Context.eval (https://www.google.com/__cypress/tests?p=cypress\\integration\\specs\\Google-search.spec.js:114:33)",
+                "diff": null
+              },
+              "uuid": "b95e968a-22f9-45be-bfb9-565af346b218",
+              "parentUUID": "51f5fe94-942f-4dc1-8ba6-80e88b653d3b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "08a5fdf9-043f-4bcb-a969-e9a833802d04"
+          ],
+          "failures": [
+            "b95e968a-22f9-45be-bfb9-565af346b218"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8548,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

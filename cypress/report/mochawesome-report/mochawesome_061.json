@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-26T15:49:52.579Z",
+    "end": "2022-06-26T15:50:39.800Z",
+    "duration": 47221,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ac882cb0-88ca-4382-830a-6ea4cf87563e",
+      "title": "",
+      "fullFile": "cypress/integration/specs/weightWatcher.spec.js",
+      "file": "cypress/integration/specs/weightWatcher.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bf0e783c-e874-4978-9fde-96330fd61102",
+          "title": "e2e test on weightWatcher",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to weight watcher,send zip code, capture name",
+              "fullTitle": "e2e test on weightWatcher navigate to weight watcher,send zip code, capture name",
+              "timedOut": null,
+              "duration": 44103,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let zipCode = [];\nzipCode.push('11214');\nzipCode.push('11763');\nfor (let i = 0; i < zipCode.length; i++) {\n  cy.visit('https://www.weightwatchers.com');\n  cy.viewport(1080, 720);\n  cy.xpath('//*[text()=\"Find a Workshop\"]', {\n    timeout: 4000\n  }).eq(0).click({\n    force: true\n  }); // cy.xpath('//*[text()=\"Virtual\"]',{timeout:4000}).click({ force: true });\n  cy.xpath('//*[@id=\"location-search\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  }); // cy.xpath('//*[@id=\"location-search\"]', { timeout: 4000 }).type(zipCode[i]);\n  cy.xpath('//input[@id=\"location-search\"]', {\n    timeout: 4000\n  }).type(\"11417\");\n  cy.xpath('//*[id=\"location-search-cta\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  }); //*[@class=\"linkContainer-1NkqM\"]\n  cy.xpath('//*[@id=\"location-1252589\"]').eq(0).then($searchResult => {\n    const textResult = $searchResult.text();\n    cy.log(textResult);\n    cy.addContext(textResult);\n    cy.xpath('//*[@class=\"linkContainer-1NkqM\"]', {\n      timeout: 4000\n    }).eq(0).click({\n      force: true\n    });\n    cy.scrollTo(0, 200);\n  }); //end of then\n} //end of loop",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[id=\"location-search-cta\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[id=\"location-search-cta\"]`, but never found it.\n    at Context.eval (https://www.weightwatchers.com/__cypress/tests?p=cypress/integration/specs/weightWatcher.spec.js:124:10)",
+                "diff": null
+              },
+              "uuid": "f2b16352-d223-4936-97ff-cb1ffce5f77e",
+              "parentUUID": "bf0e783c-e874-4978-9fde-96330fd61102",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f2b16352-d223-4936-97ff-cb1ffce5f77e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 44103,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

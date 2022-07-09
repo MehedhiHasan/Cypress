@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-26T17:45:31.322Z",
+    "end": "2022-06-26T17:46:37.936Z",
+    "duration": 66614,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2c545301-8424-4b1a-a30c-643996db1389",
+      "title": "",
+      "fullFile": "cypress/integration/specs/weightWatcher.spec.js",
+      "file": "cypress/integration/specs/weightWatcher.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "04286477-8e0c-40f5-bfdc-dcd21d4f1794",
+          "title": "e2e test on weightWatcher",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to weight watcher,send zip code, capture name",
+              "fullTitle": "e2e test on weightWatcher navigate to weight watcher,send zip code, capture name",
+              "timedOut": null,
+              "duration": 59929,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let zipCode = [];\nzipCode.push('11214');\nzipCode.push('11763');\nfor (let i = 0; i < zipCode.length; i++) {\n  cy.visit('https://www.weightwatchers.com');\n  cy.viewport(1080, 720);\n  cy.xpath('//*[text()=\"Find a Workshop\"]', {\n    timeout: 4000\n  }).eq(0).click({\n    force: true\n  }); // cy.xpath('//*[text()=\"Virtual\"]',{timeout:4000}).click({ force: true });\n  cy.xpath('//*[@id=\"location-search\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  }); // cy.xpath('//*[@id=\"location-search\"]', { timeout: 4000 }).type(zipCode[i]);\n  cy.xpath('//input[@id=\"location-search\"]', {\n    timeout: 4000\n  }).type(\"11417\");\n  cy.xpath('//*[@id=\"location-search-cta\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  });\n  cy.xpath('//*[@id=\"location-1252589\"]').eq(0).then($searchResult => {\n    const textResult = $searchResult.text();\n    cy.log(textResult);\n    cy.addContext(textResult);\n    cy.xpath('//*[@class=\"linkContainer-1NkqM\"]', {\n      timeout: 4000\n    }).eq(0).click({\n      force: true\n    });\n  }); //end of then\n  cy.scrollTo(0, 200);\n  cy.xpath('//*[@id=\"studioWorkshopSchedule\"]').then($searchResult => {\n    const textResult = $searchResult.text();\n    cy.log(textResult);\n    cy.addContext(textResult);\n  }); //end of then\n} //end of loop",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'getSouthWest')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'getSouthWest')\n    at i._getLargeGMapBound (https://www.weightwatchers.com/us/find-a-workshop/_next/static/chunks/5bc06ece11b080d706d3bc7c3f158d50e0bd180e.6436a67f6e7cc9931c0f.js:1:393145)\n    at i._pruneTile (https://www.weightwatchers.com/us/find-a-workshop/_next/static/chunks/5bc06ece11b080d706d3bc7c3f158d50e0bd180e.6436a67f6e7cc9931c0f.js:1:393401)\n    at nrWrapper (https://www.weightwatchers.com/us/find-a-workshop/:24:23886)\n    at i (https://www.weightwatchers.com/us/find-a-workshop/:1:1476)\n    at https://www.weightwatchers.com/us/find-a-workshop/:1:2246\n    at Array.forEach (<anonymous>)\n    at $Cypress.pause (https://www.weightwatchers.com/us/find-a-workshop/:1:2163)",
+                "diff": null
+              },
+              "uuid": "537ed76b-13b5-44e7-a7aa-27fc0d3669d1",
+              "parentUUID": "04286477-8e0c-40f5-bfdc-dcd21d4f1794",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "537ed76b-13b5-44e7-a7aa-27fc0d3669d1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 59929,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

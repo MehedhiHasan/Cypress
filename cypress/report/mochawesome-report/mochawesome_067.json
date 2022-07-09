@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-27T05:45:52.644Z",
+    "end": "2022-06-27T05:47:10.233Z",
+    "duration": 77589,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "911d04ff-51bc-4b43-bfa9-33424a71673b",
+      "title": "",
+      "fullFile": "cypress/integration/specs/weightWatcher.spec.js",
+      "file": "cypress/integration/specs/weightWatcher.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a5f4c7a8-8e1a-406d-ad95-fc722138be00",
+          "title": "e2e test on weightWatcher",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to weight watcher,send zip code, capture name",
+              "fullTitle": "e2e test on weightWatcher navigate to weight watcher,send zip code, capture name",
+              "timedOut": null,
+              "duration": 74460,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  \"WW Studio @ American Legion Queens3.18 mi107-15 Metropolitan AvenueFOREST HILLS, NY 11375     Studio Workshops are availableVirtual Workshops are availableWW Products are not available\",\n  \"Studio Workshops schedule (in-person)SUN8:30 AMSILMARA R.10:00 AMSILMARA R.MONTUEWED11:30 AMCAROL ANN P.THUFRI12:30 PMCAROL ANN P.SAT7:30 AMCAROL ANN P.9:00 AMCAROL ANN P.10:30 AMJOHN B.\"\n]",
+              "code": "let zipCode = [];\nzipCode.push('11214');\nfor (let i = 0; i < zipCode.length; i++) {\n  cy.visit('https://www.weightwatchers.com');\n  cy.viewport(1580, 1620);\n  cy.xpath('//*[text()=\"Find a Workshop\"]', {\n    timeout: 4000\n  }).eq(0).click({\n    force: true\n  }); // cy.xpath('//*[text()=\"Virtual\"]',{timeout:4000}).click({ force: true });\n  cy.xpath('//*[@id=\"location-search\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  }); // cy.xpath('//*[@id=\"location-search\"]', { timeout: 4000 }).type(zipCode[i]);\n  cy.xpath('//input[@id=\"location-search\"]', {\n    timeout: 4000\n  }).type(\"11417\");\n  cy.xpath('//*[@id=\"location-search-cta\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  });\n  cy.xpath('//*[@id=\"location-1252589\"]').eq(0).then($searchResult => {\n    const textResult = $searchResult.text();\n    cy.log(textResult);\n    cy.addContext(textResult);\n    cy.xpath('//*[@class=\"linkContainer-1NkqM\"]', {\n      timeout: 4000\n    }).eq(0).click({\n      force: true\n    });\n  }); //end of then\n  cy.scrollTo(0, 200);\n  cy.xpath('//*[@id=\"studioWorkshopSchedule\"]').then($searchResult => {\n    const textResult = $searchResult.text();\n    cy.log(textResult);\n    cy.addContext(textResult);\n  }); //end of then\n} //end of loop",
+              "err": {},
+              "uuid": "5b3bb149-56aa-499e-9acd-b9974ef9ec5a",
+              "parentUUID": "a5f4c7a8-8e1a-406d-ad95-fc722138be00",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5b3bb149-56aa-499e-9acd-b9974ef9ec5a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 74460,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

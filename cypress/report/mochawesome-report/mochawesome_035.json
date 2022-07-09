@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-26T14:44:35.355Z",
+    "end": "2022-06-26T14:44:55.635Z",
+    "duration": 20280,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "28423839-3b38-47eb-b761-9b1b7876e54e",
+      "title": "",
+      "fullFile": "cypress/integration/specs/weightWatcher.spec.js",
+      "file": "cypress/integration/specs/weightWatcher.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f540c44a-bd1c-4d68-a35a-6afd99471715",
+          "title": "e2e test on weightWatcher",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to weight watcher,send zip code, capture name",
+              "fullTitle": "e2e test on weightWatcher navigate to weight watcher,send zip code, capture name",
+              "timedOut": null,
+              "duration": 17435,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// let car = [];\n//   car.push('BMW');\n//   car.push('Tesla');\n//   for (let i = 0; i < car.length; i++){\ncy.visit('https://www.weightwatchers.com');\ncy.xpath('//*[text()=\"Find a Workshop\"]', {\n  timeout: 4000\n}).type(\"{enter}\"); // cy.xpath(' //*[text()=\"Virtual\"]', { timeout: 4000 }).type(\"{enter}\");\n// cy.xpath(' //*[@id=\"coach-search\"]', { timeout: 4000 }).type(\"{enter}\");\n// cy.xpath(' //*[@id=\"coach-search\"]', { timeout: 4000 }).type(\"11417\");\n// cy.xpath(' //*[@class=\"filterIcon-3C9D4\"]', { timeout: 4000 }).type(\"{enter}\");\n// cy.xpath('//div[@id=\"result-stats\"]').then(($searchResult) => {\n//   const textResult = $searchResult.text();\n//   cy.log(textResult);\n//   cy.addContext(textResult);\n// })//end of then\n//  }// end of loop",
+              "err": {
+                "message": "CypressError: `cy.type()` can only be called on a single element. Your subject contained 2 elements.\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` can only be called on a single element. Your subject contained 2 elements.\n\nhttps://on.cypress.io/type\n    at Context.type (https://www.weightwatchers.com/__cypress/runner/cypress_runner.js:158836:76)\n    at Context.<anonymous> (https://www.weightwatchers.com/__cypress/runner/cypress_runner.js:178437:19)\nFrom Your Spec Code:\n    at Context.eval (https://www.weightwatchers.com/__cypress/tests?p=cypress/integration/specs/weightWatcher.spec.js:109:8)",
+                "diff": null
+              },
+              "uuid": "4a77a1e5-f9d4-4f8f-8540-a9cab14cd9db",
+              "parentUUID": "f540c44a-bd1c-4d68-a35a-6afd99471715",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4a77a1e5-f9d4-4f8f-8540-a9cab14cd9db"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 17435,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

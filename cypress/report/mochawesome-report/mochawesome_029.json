@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-25T17:34:20.296Z",
+    "end": "2022-06-25T17:34:51.220Z",
+    "duration": 30924,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "390b4434-6eeb-48a3-843b-640c5b878aef",
+      "title": "",
+      "fullFile": "cypress/integration/specs/practice.js",
+      "file": "cypress/integration/specs/practice.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "47f5afb5-5b8b-4551-a479-a957e0562ef7",
+          "title": "practice",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to google",
+              "fullTitle": "practice navigate to google",
+              "timedOut": null,
+              "duration": 28691,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  \"About 892,000,000 results (0.66 seconds) \",\n  \"About 821,000,000 results (0.88 seconds) \"\n]",
+              "code": "// ArrayList < String > car = new ArrayList <> ();\nlet car = [];\ncar.push('BMW');\ncar.push('Tesla');\nfor (let i = 0; i < car.length; i++) {\n  cy.visit('https://www.google.com');\n  cy.xpath('//*[@name=\"q\"]', {\n    timeout: 4000\n  }).type(car[i]);\n  cy.xpath('//*[@name=\"q\"]', {\n    timeout: 4000\n  }).type(\"{enter}\");\n  cy.xpath('//div[@id=\"result-stats\"]').then($searchResult => {\n    const textResult = $searchResult.text();\n    cy.log(textResult);\n    cy.addContext(textResult);\n  }); //end of then\n} // end of loop",
+              "err": {},
+              "uuid": "c8de5869-9f5c-4a53-9715-15e2171d9956",
+              "parentUUID": "47f5afb5-5b8b-4551-a479-a957e0562ef7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c8de5869-9f5c-4a53-9715-15e2171d9956"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28691,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

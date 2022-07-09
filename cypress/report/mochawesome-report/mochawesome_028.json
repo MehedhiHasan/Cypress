@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-25T17:33:51.082Z",
+    "end": "2022-06-25T17:33:51.532Z",
+    "duration": 450,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1e6aafbb-35ec-4ce6-a4d1-fc190aa5ef6b",
+      "title": "",
+      "fullFile": "cypress/integration/specs/practice.js",
+      "file": "cypress/integration/specs/practice.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2add305c-82c3-43af-972b-93f65ad733cb",
+          "title": "practice",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to google",
+              "fullTitle": "practice navigate to google",
+              "timedOut": null,
+              "duration": 238,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// ArrayList < String > car = new ArrayList <> ();\nlet car = [];\ncar.push('BMW');\ncar.push('Tesla');\nfor (let i = 0; i < size.length; i++) {\n  cy.visit('https://www.google.com');\n  cy.xpath('//*[@name=\"q\"]', {\n    timeout: 4000\n  }).type(car[i]);\n  cy.xpath('//*[@name=\"q\"]', {\n    timeout: 4000\n  }).type(\"{enter}\");\n  cy.xpath('//div[@id=\"result-stats\"]').then($searchResult => {\n    const textResult = $searchResult.text();\n    cy.log(textResult);\n    cy.addContext(textResult);\n  }); //end of then\n} // end of loop",
+              "err": {
+                "message": "ReferenceError: size is not defined",
+                "estack": "ReferenceError: size is not defined\n    at Context.eval (http://localhost:64863/__cypress/tests?p=cypress/integration/specs/practice.js:107:25)",
+                "diff": null
+              },
+              "uuid": "e022841d-75cf-4e90-b579-faa07e3b7442",
+              "parentUUID": "2add305c-82c3-43af-972b-93f65ad733cb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e022841d-75cf-4e90-b579-faa07e3b7442"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 238,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

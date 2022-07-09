@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-26T15:12:30.519Z",
+    "end": "2022-06-26T15:12:31.152Z",
+    "duration": 633,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "39168f24-a06e-4cfa-8248-06cdd6903da6",
+      "title": "",
+      "fullFile": "cypress/integration/specs/weightWatcher.spec.js",
+      "file": "cypress/integration/specs/weightWatcher.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d50cbb9a-e8ea-4d1c-bbb3-6277d414f553",
+          "title": "e2e test on weightWatcher",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to weight watcher,send zip code, capture name",
+              "fullTitle": "e2e test on weightWatcher navigate to weight watcher,send zip code, capture name",
+              "timedOut": null,
+              "duration": 373,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let zipCode = [];\ncars.push('11214');\ncars.push('11763');\nfor (let i = 0; i < cars.length; i++) {\n  cy.visit('https://www.weightwatchers.com');\n  cy.viewport(1080, 720);\n  cy.xpath('//*[text()=\"Find a Workshop\"]', {\n    timeout: 4000\n  }).eq(0).click({\n    force: true\n  });\n  cy.xpath('//*[text()=\"Virtual\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  }); // cy.xpath(' //*[@id=\"coach-search\"]', { timeout: 4000 }).click({ force: true });\n  cy.xpath(' //*[@id=\"coach-search\"]', {\n    timeout: 4000\n  }).type(zipCode[i]);\n  cy.xpath(' //*[@class=\"filterIcon-3C9D4\"]', {\n    timeout: 4000\n  }).click({\n    force: true\n  }); // cy.xpath('//div[@id=\"result-stats\"]').then(($searchResult) => {\n  //   const textResult = $searchResult.text();\n  //   cy.log(textResult);\n  //   cy.addContext(textResult);\n  // })//end of then\n} //end of loop",
+              "err": {
+                "message": "ReferenceError: cars is not defined",
+                "estack": "ReferenceError: cars is not defined\n    at Context.eval (http://localhost:50155/__cypress/tests?p=cypress/integration/specs/weightWatcher.spec.js:103:5)",
+                "diff": null
+              },
+              "uuid": "3bff5176-6773-4150-97a7-b3b7a3742eab",
+              "parentUUID": "d50cbb9a-e8ea-4d1c-bbb3-6277d414f553",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3bff5176-6773-4150-97a7-b3b7a3742eab"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 373,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}

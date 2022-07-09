@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-03T06:05:16.318Z",
+    "end": "2022-02-03T06:05:27.024Z",
+    "duration": 10706,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dc824b06-3747-43f9-9e3b-abfdab63d731",
+      "title": "",
+      "fullFile": "cypress/integration/specs/Google-search.spec.js",
+      "file": "cypress/integration/specs/Google-search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e0237a11-a9f3-403d-8d29-f7d95fab0917",
+          "title": "example to-do app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to google search and search for a car",
+              "fullTitle": "example to-do app Navigates to google search and search for a car",
+              "timedOut": null,
+              "duration": 2040,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com');\ncy.xpath('//*[@name=\"q\"]', {\n  timeout: 7000\n}).type(\"cars\");",
+              "err": {},
+              "uuid": "f1ec6c9a-4868-4df4-8c02-a72168e662d3",
+              "parentUUID": "e0237a11-a9f3-403d-8d29-f7d95fab0917",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Submits the search field and prints out the search number",
+              "fullTitle": "example to-do app Submits the search field and prints out the search number",
+              "timedOut": null,
+              "duration": 6034,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"Screenshot\",\n  \"value\": \"/cypress/report/screenshots>/specs/Google-search.spec.js/example to-do app -- Submits the search field and prints out the search number (failed).png\"\n}",
+              "code": "cy.xpath('//*[@name=\"q\"]', {\n  timeout: 7000\n}).type(\"{enter}\");\ncy.xpath('//*[@id=\"result-stats\"]').then(searchResult => {\n  const text = searchResult.text();\n  cy.log(\"Search result is \" + $searchResult);\n  const arrayResult = text.split(' ');\n  cy.log(\"Search number is \" + arrayResult[0]);\n}); //end of should",
+              "err": {
+                "message": "ReferenceError: $searchResult is not defined",
+                "estack": "ReferenceError: $searchResult is not defined\n    at Context.eval (https://www.google.com/__cypress/tests?p=cypress\\integration\\specs\\Google-search.spec.js:115:36)",
+                "diff": null
+              },
+              "uuid": "90aca3a2-ebbf-4cca-9033-ff2cedf8166d",
+              "parentUUID": "e0237a11-a9f3-403d-8d29-f7d95fab0917",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f1ec6c9a-4868-4df4-8c02-a72168e662d3"
+          ],
+          "failures": [
+            "90aca3a2-ebbf-4cca-9033-ff2cedf8166d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8074,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-26T14:39:27.355Z",
+    "end": "2022-06-26T14:39:27.946Z",
+    "duration": 591,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b3411e1c-66b1-400f-82c8-a7cb07c51111",
+      "title": "",
+      "fullFile": "cypress/integration/specs/weightWatcher.spec.js",
+      "file": "cypress/integration/specs/weightWatcher.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a114a901-9a2d-4e24-aa75-ee477e8035fd",
+          "title": "e2e test on weightWatcher",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "navigate to weight watcher,send zip code, capture name",
+              "fullTitle": "e2e test on weightWatcher navigate to weight watcher,send zip code, capture name",
+              "timedOut": null,
+              "duration": 308,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// let car = [];\n//   car.push('BMW');\n//   car.push('Tesla');\n//   for (let i = 0; i < car.length; i++){\ncy.visit('https://www.weightwatchers.com');\ncy.xpath('//*[text()=\"Find a Workshop\"]', {\n  timeout: 4000\n}).type(\"{enter}\");\ncy.xpath(' //*[text()=\"Virtual\"]', {\n  timeout: 4000\n}).type(\"{enter}\");\ncy.xpath(' //*[@id=\"coach-search\"\"]', {\n  timeout: 4000\n}).type(\"{enter}\");\ncy.xpath(' //*[@id=\"coach-search\"\"]', {\n  timeout: 4000\n}).type(\"11417\"); //*[text()='Virtual']\nid = \"coach-search\"; // cy.xpath('//div[@id=\"result-stats\"]').then(($searchResult) => {\n//   const textResult = $searchResult.text();\n//   cy.log(textResult);\n//   cy.addContext(textResult);\n// })//end of then\n//  }// end of loop",
+              "err": {
+                "message": "ReferenceError: id is not defined",
+                "estack": "ReferenceError: id is not defined\n    at Context.eval (http://localhost:61935/__cypress/tests?p=cypress/integration/specs/weightWatcher.spec.js:120:8)",
+                "diff": null
+              },
+              "uuid": "19fa7105-7d19-4222-880f-12b9a5766700",
+              "parentUUID": "a114a901-9a2d-4e24-aa75-ee477e8035fd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "19fa7105-7d19-4222-880f-12b9a5766700"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 308,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "pageLoadTimeout": 12000,
+        "trashAssetsBeforeRuns": true,
+        "defaultCommandTimeout": 20000
+      },
+      "version": "6.0.1"
+    }
+  }
+}
